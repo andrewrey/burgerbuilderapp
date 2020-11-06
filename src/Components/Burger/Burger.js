@@ -9,7 +9,7 @@ const Burger = ({ ingredients }) => {
       });
     })
     .reduce((acc, curr) => acc.concat(curr), []);
-  console.log(ingredients);
+  console.log(burgerIngredients);
   if (burgerIngredients.length === 0) {
     burgerIngredients = <p>Please add ingredients to your burger</p>;
   }
