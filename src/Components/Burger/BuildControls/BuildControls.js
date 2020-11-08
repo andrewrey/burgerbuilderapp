@@ -17,6 +17,7 @@ const BuildControls = ({ addIngredient, removeIngredient, disabledInfo, price })
       {controls.map((ctrl) => (
         <BuildControl key={ctrl.label} label={ctrl.label} removeIngredient={() => removeIngredient(ctrl.type)} addIngredient={() => addIngredient(ctrl.type)} disabled={disabledInfo[ctrl.type]} price={price} />
       ))}
+      <button className={classes.OrderButton}>ORDER NOW</button>
     </div>
   );
 };
