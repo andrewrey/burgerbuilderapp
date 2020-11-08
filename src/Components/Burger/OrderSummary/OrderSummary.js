@@ -1,6 +1,7 @@
 import Aux from "../../../hoc/Aux";
+import Button from "../../UI/Button/Button";
 
-const orderSummary = ({ ingredients, modalClosed }) => {
+const orderSummary = ({ ingredients, modalClosed, continuePurchase }) => {
   const ingredientSummary = Object.keys(ingredients).map((ing) => (
     <li key={ing}>
       <span style={{ textTransform: "capitalize" }}>{ing}</span>: {ingredients[ing]}
@@ -12,8 +13,12 @@ const orderSummary = ({ ingredients, modalClosed }) => {
       <p>A delicious burger with the following ingredients</p>
       <ul>{ingredientSummary}</ul>
       <p>Continue to Checkout?</p>
-      <button onClick={modalClosed}>CANCEL</button>
-      <button>CONTINUE</button>
+      <Button clicked={modalClosed} btnType="Danger">
+        CANCEL
+      </Button>
+      <Button clicked={continuePurchase} btnType="Success">
+        CONTINUE
+      </Button>
     </Aux>
   );
 };
