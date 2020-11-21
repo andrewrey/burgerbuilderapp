@@ -58,6 +58,7 @@ class BurgerBuilder extends Component {
         this.setState({ loading: false, purchasing: false });
       })
       .catch((error) => {
+        console.log(error, "hahah");
         this.setState({ loading: false, purchasing: false });
       });
   };
@@ -122,4 +123,4 @@ class BurgerBuilder extends Component {
   }
 }
 
-export default withErrorHandler(BurgerBuilder);
+export default withErrorHandler(BurgerBuilder, axios);
